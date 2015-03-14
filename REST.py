@@ -1,8 +1,6 @@
 import subprocess
 
-BASE_URL = "https://api.github.com"
-
-def get_user_details(username):
-    response = subprocess.check_output(('curl', '-u', username, BASE_URL))
+def get_user_details(username, url):
+    response = subprocess.check_output(('curl', '-u', username, url))
     response = response.split('\n')
     return response
